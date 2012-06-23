@@ -6,6 +6,7 @@
 #define END_CGSQL_NS }
 
 #define DEBUG_ASSERTIONS
+#define ENABLE_WARNINS
 #include "Debug.h"
 
 

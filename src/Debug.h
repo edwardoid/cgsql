@@ -18,4 +18,13 @@
 #define ASSERT(EXP) (EXP)
 #endif
 
+#ifdef ENABLE_WARNINS
+#define WARNING(MSG) {\
+	std::cout << "Warning: " \
+		  << MSG << std::endl; \
+	}
+#else
+#define WARNING(MSG){}
+#endif
+
 #endif // DEBUG_H
