@@ -1,0 +1,11 @@
+#Header
+[(WHITES "Petrosyan")
+ AND
+ (BLACKS "Aronyan")
+ (WHITES WINS)
+]
+#body
+((WHITES HAS(fuzzyGoodPawn.strong AND debute.bad))
+ AND
+ (BLACKS HASNT(classicGoodPawn.strong AND debute.good)))
+ 
