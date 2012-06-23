@@ -10,9 +10,10 @@ class Node
 public:
 	typedef enum
 	{
-		Color = 1,
+		Root = 1,
+		Color,
 		Result,
-		BooleanOperation,
+		Logical,
 		Concept
 	} Type;
 public:
