@@ -1,5 +1,5 @@
 #include "Node.h"
-
+#include "Debug.h"
 
 BEGIN_CGSQL_NS
 
@@ -24,11 +24,14 @@ Node* Node::parent() const
 
 void Node::setLeft(Node* left)
 {
+	if(left) ASSERT(canAdd(left->type()));
 	m_left = left;
 }
 
 void Node::setRight(Node* right)
 {
+	if(right)
+		ASSERT(canAdd(right->type()));
 	m_right = right;
 }
 

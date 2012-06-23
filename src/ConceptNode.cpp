@@ -15,6 +15,11 @@ Node::Type ConceptNode::type() const
 	return Node::Concept;
 }
 
+bool ConceptNode::canAdd(Node::Type) const
+{
+	return false;
+}
+
 void ConceptNode::setName(const std::string& name)
 {
 	m_name = name;

@@ -14,6 +14,7 @@ public:
 		    const std::string& name = std::string());
 	virtual ~ConceptNode();
 	virtual Node::Type type() const;
+	virtual bool canAdd(const Node::Type type) const;
 	virtual void setName(const std::string& name);
 	std::string name() const;
 	void setRequieredValue(const std::string& value);

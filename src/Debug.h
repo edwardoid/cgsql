@@ -3,17 +3,19 @@
 
 #include <iostream>
 
-#ifdef DEBUG_ASSERIONS
+#define QQ(STR) #STR
+
+#ifdef DEBUG_ASSERTIONS
 #define ASSERT(EXP) {\
-	if(!(EXP) {\
+	if(!(EXP)) {\
 		 std::cout << "************************************\n" \
-			   << "Asserion failed: " << \
-			   << QQ(EXP) << \
-			   << "On line " << __LINE \
-			   << " In file " << __FILE__ \
-			   << "************************************\n" \
+			   << "Asserion failed: " \
+			   << QQ(EXP)\
+			   << " On line " << __LINE__ \
+			   << " In file " << __FILE__ << std::endl \
+			   << "************************************" \
 			   << std::endl;\
-	}
+	}}
 #else
 #define ASSERT(EXP) (EXP)
 #endif

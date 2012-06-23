@@ -12,6 +12,11 @@ Node::Type RootNode::type() const
 	return Node::Root;
 }
 
+bool RootNode::canAdd(const Node::Type) const
+{
+	return true;
+}
+
 void RootNode::setHeader(Header* header)
 {
 	setLeft(header);

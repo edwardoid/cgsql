@@ -15,6 +15,7 @@ public:
 	RootNode();
 	virtual ~RootNode();
 	virtual Node::Type type() const;
+	virtual bool canAdd(const Node::Type) const;
 	void setHeader(Header* header);
 	void setBody(Body* body); 
 	Header* header() const;

@@ -18,7 +18,6 @@ Query::~Query()
 
 std::istream& operator >> (std::istream& is, Query& q)
 {
-	ASSERT(false);
 	std::string tmp;
 	while(getline(is, tmp))
 	{

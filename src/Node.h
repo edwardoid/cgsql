@@ -25,6 +25,7 @@ public:
 	virtual void setRight(Node* right);
 	virtual Node* left() const;
 	virtual Node* right() const;
+	virtual bool canAdd(const Type type) const = 0;
 	virtual ~Node();
 private:
 	Node* m_parent;
