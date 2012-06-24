@@ -42,6 +42,7 @@ std::string StringUtils::extract(const std::string& str,
 
 std::string StringUtils::trim(const std::string& str)
 {
+    return str;
     std::stringstream ss;
     ss << str;
     std::string res;

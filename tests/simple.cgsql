@@ -1,7 +1,8 @@
 #Header
-[(WHITES "Petrosyan")
+[((WHITES "Petrosyan")
  AND
- (BLACKS "Aronyan")
+ (BLACKS "Aronyan"))
+ AND
  (WHITES WINS)
 ]
 #body

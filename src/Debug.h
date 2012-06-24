@@ -29,4 +29,14 @@
 #define WARNING(MSG){}
 #endif
 
+#define ERROR(MSG) {\
+        std::cerr << MSG << std::endl;\
+    }
+
+#define SYNTAX_ERROR(STR, MSG) {\
+        std::cerr << "Syntax error: " << MSG\
+                  << " in: " << std::endl \
+                  << STR << std::endl; \
+    }
+
 #endif // DEBUG_H

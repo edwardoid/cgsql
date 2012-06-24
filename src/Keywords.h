@@ -4,21 +4,22 @@
 
 BEGIN_CGSQL_NS
 
-const char* WHITES               = "WHITES";
-const char* BLACKS               = "BLACKS";
-const char* WINS                 = "WINS";
-const char* LOSES                = "LOSES";
-const char* HAS                  = "HAS";
-const char* HASNT                = "HASNT";
-const char* CONCEPT_DELIMETER    = ".";
-const char* HEADER_BEGIN         = "[";
-const char* HEADER_END           = "]";
-const char* BODY_BEGIN           = "(";
-const char* BODY_END             = ")";
-const char* AND_K                = "AND";
-const char* OR_K                 = "OR";
-const char* XOR_K                = "XOR";
-const char* COMMENT              = "#";
+#define WHITES            "WHITES"
+#define BLACKS            "BLACKS"
+#define WINS              "WINS"
+#define LOSES             "LOSES"
+#define HAS               "HAS"
+#define HASNT             "HASNT"
+#define CONCEPT_DELIMETER '.'
+#define HEADER_BEGIN      '['
+#define HEADER_END        ']'
+#define BEGIN             '('
+#define END               ')'
+#define PLAYER_NAME_QTT   '"'
+#define AND_K             "AND"
+#define OR_K              "OR"
+#define XOR_K             "XOR"
+#define COMMENT           '#'
 
 
 END_CGSQL_NS

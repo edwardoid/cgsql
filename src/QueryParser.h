@@ -13,13 +13,21 @@ class QueryParser
 {
 public:
     QueryParser(const std::string& str = std::string(),
-            AST* root = new AST());
+                AST* root = new AST());
     ~QueryParser();
-    static AST* parse(const std::string& str, AST* root = new AST(), const int level = 0);
+    static
+    AST* parse(const std::string& str,
+               AST* root = new AST(),
+               const int level = 0);
     AST* ast() const;
 private:
+    static
+    Node* subParse(const std::string& str,
+                   const int level);
+
     #ifdef DEBUG_PARSING_LEVELS
-    static void printLevelOffset(const int level);
+    static
+    void printLevelOffset(const int level);
     #endif
 private:
     AST* m_root;

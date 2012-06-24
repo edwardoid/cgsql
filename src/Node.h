@@ -11,11 +11,18 @@ public:
     typedef enum
     {
         Root = 1,
+        Player,
         Color,
         Result,
         Logical,
         Concept
     } Type;
+
+    typedef enum
+    {
+        Whites = 0,
+        Blacks
+    } NodeColor;
 public:
     Node(Node* parent = 0);
     virtual void setParent(Node* parent);
