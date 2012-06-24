@@ -16,6 +16,8 @@ class StringUtils
                             size_t& end,
                             const char delimeter1,
                             const char delimeter2);
+        static
+        std::string trim(const std::string& str);
 };
 
 END_CGSQL_NS

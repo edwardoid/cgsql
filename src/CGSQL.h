@@ -8,6 +8,7 @@
 #define DEBUG_ASSERTIONS
 #define ENABLE_WARNINS
 #define DEBUG_PARSING_LEVELS
+#define DEBUG_COMMENTS
 
 #include "Debug.h"
 

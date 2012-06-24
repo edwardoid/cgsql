@@ -1,4 +1,5 @@
 #include "StringUtils.h"
+#include <sstream>
 
 BEGIN_CGSQL_NS
 
@@ -37,6 +38,15 @@ std::string StringUtils::extract(const std::string& str,
         }
     }
     return std::string();
+}
+
+std::string StringUtils::trim(const std::string& str)
+{
+    std::stringstream ss;
+    ss << str;
+    std::string res;
+    ss >> res;
+    return res;
 }
 
 END_CGSQL_NS

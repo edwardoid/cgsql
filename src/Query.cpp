@@ -1,5 +1,6 @@
 #include "Query.h"
 #include "Keywords.h"
+#include "StringUtils.h"
 
 BEGIN_CGSQL_NS
 
@@ -26,7 +27,19 @@ std::istream& operator >> (std::istream& is, Query& q)
     std::string tmp;
     while(getline(is, tmp))
     {
-        q.m_queryStr += tmp;
+        size_t commentSymbolPos = tmp.find_first_of(COMMENT);
+        if(commentSymbolPos != std::string::npos)
+        {
+            #ifdef DEBUG_COMMENTS
+            std::cout << "Removed comment: "
+                      << tmp.substr(commentSymbolPos + 1) << std::endl;
+            #endif
+            tmp = tmp.substr(0, commentSymbolPos);
+        }
+        tmp = StringUtils::trim(tmp);
+        if(tmp.size() < 1)
+            continue;
+        q.m_queryStr += tmp + " ";
     }
     return is;
 }
