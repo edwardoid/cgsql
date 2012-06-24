@@ -4,7 +4,7 @@
 BEGIN_CGSQL_NS
 
 XorNode::XorNode(Node* parent)
-	: LogicalBase(parent)
+    : LogicalBase(parent)
 {
 }
 

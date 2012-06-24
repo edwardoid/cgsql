@@ -8,8 +8,8 @@ BEGIN_CGSQL_NS
 class OrNode: public LogicalBase
 {
 public:
-	OrNode(Node* parent);
-	virtual ~OrNode();
+    OrNode(Node* parent);
+    virtual ~OrNode();
 };
 
 END_CGSQL_NS

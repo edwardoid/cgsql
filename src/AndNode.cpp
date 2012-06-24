@@ -4,7 +4,7 @@
 BEGIN_CGSQL_NS
 
 AndNode::AndNode(Node* parent)
-	: LogicalBase(parent)
+    : LogicalBase(parent)
 {
 }
 

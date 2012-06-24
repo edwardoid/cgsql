@@ -3,38 +3,38 @@
 BEGIN_CGSQL_NS
 
 RootNode::RootNode()
-	: Node(0)
+    : Node(0)
 {
 }
 
 Node::Type RootNode::type() const
 {
-	return Node::Root;
+    return Node::Root;
 }
 
 bool RootNode::canAdd(const Node::Type) const
 {
-	return true;
+    return true;
 }
 
 void RootNode::setHeader(Header* header)
 {
-	setLeft(header);
+    setLeft(header);
 }
 
 void RootNode::setBody(Body* body)
 {
-	setRight(body);
+    setRight(body);
 }
 
 Header* RootNode::header() const
 {
-	return left();
+    return left();
 } 
 
 Body* RootNode::body() const
 {
-	return right();
+    return right();
 }
 
 RootNode::~RootNode()

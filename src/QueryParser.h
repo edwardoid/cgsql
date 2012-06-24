@@ -12,14 +12,14 @@ typedef RootNode AST;
 class QueryParser
 {
 public:
-	QueryParser(const std::string& str = std::string(),
-		    AST* root = new AST());
-	~QueryParser();
-	static AST* parse(const std::string& str, AST* root = new AST());
-	AST* ast() const;
+    QueryParser(const std::string& str = std::string(),
+            AST* root = new AST());
+    ~QueryParser();
+    static AST* parse(const std::string& str, AST* root = new AST());
+    AST* ast() const;
 private:
-	AST* m_root;
-	std::string m_q;
+    AST* m_root;
+    std::string m_q;
 };
 
 END_CGSQL_NS

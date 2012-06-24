@@ -10,14 +10,14 @@ BEGIN_CGSQL_NS
 class Query
 {
 public:
-	Query();
-	Query(const std::string& str);
-	friend std::istream& operator >> (std::istream& is, Query& q);
-	friend std::ostream& operator << (std::ostream& os, const Query& q);
-	~Query();
+    Query();
+    Query(const std::string& str);
+    friend std::istream& operator >> (std::istream& is, Query& q);
+    friend std::ostream& operator << (std::ostream& os, const Query& q);
+    ~Query();
 protected:
 private:
-	std::string m_queryStr;
+    std::string m_queryStr;
 };
 
 END_CGSQL_NS

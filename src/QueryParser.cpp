@@ -4,11 +4,11 @@ BEGIN_CGSQL_NS
 
 
 QueryParser::QueryParser(const std::string& str, AST* ast)
-	: m_q(str)
-	, m_root(ast)
+    : m_q(str)
+    , m_root(ast)
 {
-	if(str.size() > 0)
-		parse(str, ast);
+    if(str.size() > 0)
+        parse(str, ast);
 }
 
 QueryParser::~QueryParser()
@@ -17,12 +17,12 @@ QueryParser::~QueryParser()
 
 AST* QueryParser::parse(const std::string& str, AST* ast)
 {
-	return ast;
+    return ast;
 }
 
 AST* QueryParser::ast() const
 {
-	return m_root;
+    return m_root;
 }
 
 END_CGSQL_NS

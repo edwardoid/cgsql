@@ -4,7 +4,7 @@
 BEGIN_CGSQL_NS
 
 OrNode::OrNode(Node* parent)
-	: LogicalBase(parent)
+    : LogicalBase(parent)
 {
 }
 

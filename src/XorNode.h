@@ -8,8 +8,8 @@ BEGIN_CGSQL_NS
 class XorNode: public LogicalBase
 {
 public:
-	XorNode(Node* parent);
-	virtual ~XorNode();
+    XorNode(Node* parent);
+    virtual ~XorNode();
 };
 
 END_CGSQL_NS
