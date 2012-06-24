@@ -12,6 +12,7 @@ class Query
 public:
     Query();
     Query(const std::string& str);
+    std::string toString() const;
     friend std::istream& operator >> (std::istream& is, Query& q);
     friend std::ostream& operator << (std::ostream& os, const Query& q);
     ~Query();

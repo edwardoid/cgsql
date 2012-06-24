@@ -15,8 +15,12 @@ public:
     QueryParser(const std::string& str = std::string(),
             AST* root = new AST());
     ~QueryParser();
-    static AST* parse(const std::string& str, AST* root = new AST());
+    static AST* parse(const std::string& str, AST* root = new AST(), const int level = 0);
     AST* ast() const;
+private:
+    #ifdef DEBUG_PARSING_LEVELS
+    static void printLevelOffset(const int level);
+    #endif
 private:
     AST* m_root;
     std::string m_q;

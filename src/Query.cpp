@@ -16,6 +16,11 @@ Query::~Query()
 {
 }
 
+std::string Query::toString() const
+{
+    return m_queryStr;
+}
+
 std::istream& operator >> (std::istream& is, Query& q)
 {
     std::string tmp;
