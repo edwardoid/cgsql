@@ -3,6 +3,7 @@
 #include "StringUtils.h"
 #include "Keywords.h"
 #include "PlayerNode.h"
+#include "ResultNode.h"
 #include "ConceptNode.h"
 #include "HasNode.h"
 #include "AndNode.h"
@@ -38,6 +39,12 @@ Node* NodeFactory::nodeFromString(const std::string& str)
         {
             possibleNodeType = Node::Player;
         }
+        else if((*i == WINS ||
+                 *i == TIE) &&
+                 possibleNodeType == Node::Color)
+        {
+            possibleNodeType = Node::Result;
+        }
         else if(strIsConcept(*i))
         {
             StringList cl = StringUtils::split(*i, CONCEPT_DELIMETER);
@@ -67,7 +74,7 @@ Node* NodeFactory::nodeFromString(const std::string& str)
             PlayerNode* node = new PlayerNode();
             if(*l.begin() == WHITES)
                 node->setColor(Node::Whites);
-            else if(*l.rend() == BLACKS)
+            else if(*l.begin() == BLACKS)
                 node->setColor(Node::Blacks);
             else
             {
@@ -75,6 +82,31 @@ Node* NodeFactory::nodeFromString(const std::string& str)
                 return NULL;
             }
             return node;
+        }
+
+        case Node::Result:
+        {
+            ResultNode* r = new ResultNode();
+            if(l.size() == 1) r->setResult(Node::Tie);
+            else if(l.size() == 2)
+            {
+                std::string color = *l.begin();
+                if(color == WHITES)
+                    r->setResult(Node::WhitesWins);
+                else if(color == BLACKS)
+                    r->setResult(Node::BlacksWins);
+                else
+                {
+                    SYNTAX_ERROR("Unknown color specifier for result", color);
+                    return NULL;
+                }
+                return r;
+            }
+            else
+            {
+                SYNTAX_ERROR("Unknown keyword", *(++(++(l.begin()))));
+                return NULL;
+            }
         }
  
         case Node::Has:

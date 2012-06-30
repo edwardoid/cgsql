@@ -7,7 +7,6 @@ ConceptNode::ConceptNode(Node* parent,
     : Node(parent)
     , m_name(name)
 {
-    WARNING("Fuck");
 }
 
 Node::Type ConceptNode::type() const

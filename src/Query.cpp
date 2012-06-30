@@ -1,6 +1,9 @@
 #include "Query.h"
 #include "Keywords.h"
 #include "StringUtils.h"
+#include "Node.h"
+#include "RootNode.h"
+#include "QueryParser.h"
 
 BEGIN_CGSQL_NS
 
@@ -20,6 +23,20 @@ Query::~Query()
 std::string Query::toString() const
 {
     return m_queryStr;
+}
+
+void Query::clear()
+{
+    m_queryStr.erase();
+}
+
+bool Query::parse(const std::string& queryStr)
+{
+    m_queryStr = queryStr;
+    if(m_ast)
+        delete m_ast;
+    m_ast = QueryParser::parse(m_queryStr, new RootNode());
+    return m_ast != 0;
 }
 
 std::istream& operator >> (std::istream& is, Query& q)
@@ -48,5 +65,6 @@ std::ostream& operator << (std::ostream& os, const Query& q)
 {
     return os << q.m_queryStr;
 }
+
 
 END_CGSQL_NS

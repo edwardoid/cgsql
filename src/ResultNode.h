@@ -16,28 +16,25 @@
 * 
 */
 
-#ifndef PLAYERNODE_H
-#define PLAYERNODE_H
+#ifndef RESULTNODE_H
+#define RESULTNODE_H
 
 #include "Node.h"
 
 BEGIN_CGSQL_NS
 
-class PlayerNode: public Node
+class ResultNode: public Node
 {
 public:
-    PlayerNode(Node* parent = 0);
-    virtual ~PlayerNode();
-    virtual Node::Type type() const;
-    virtual bool canAdd(const Node::Type type) const;
-    void setName(const std::string& name);
-    std::string name() const;
-    void setColor(Node::NodeColor color);
-    Node::NodeColor color() const;
+    ResultNode(Node* parent = 0);
+    virtual Type type() const;
+    virtual bool canAdd(const Type type) const;
+    void setResult(GameResult result);
+    GameResult result() const;
 private:
-    std::string m_name;
-    Node::NodeColor m_color;
+    GameResult m_result;
 };
 
 END_CGSQL_NS
-#endif // PLAYERNODE_H
+
+#endif // RESULTNODE_H

@@ -16,28 +16,30 @@
 * 
 */
 
-#ifndef PLAYERNODE_H
-#define PLAYERNODE_H
+#ifndef QUERYPRINTER_H
+#define QUERYPRINTER_H
 
+#include "CGSQL.h"
 #include "Node.h"
+#include "Query.h"
+
+#include <ostream>
 
 BEGIN_CGSQL_NS
 
-class PlayerNode: public Node
+typedef class RootNode AST;
+
+class QueryPrinter
 {
 public:
-    PlayerNode(Node* parent = 0);
-    virtual ~PlayerNode();
-    virtual Node::Type type() const;
-    virtual bool canAdd(const Node::Type type) const;
-    void setName(const std::string& name);
-    std::string name() const;
-    void setColor(Node::NodeColor color);
-    Node::NodeColor color() const;
+    QueryPrinter(const Query& q);
+    QueryPrinter(const AST* ast);
+    friend std::ostream operator << (std::ostream&,
+                                     const QueryPrinter& p);
 private:
-    std::string m_name;
-    Node::NodeColor m_color;
+    const AST* m_ast;
 };
 
 END_CGSQL_NS
-#endif // PLAYERNODE_H
+
+#endif // QUERYPRINTER_H
