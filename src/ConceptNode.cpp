@@ -15,9 +15,10 @@ Node::Type ConceptNode::type() const
     return Node::Concept;
 }
 
-bool ConceptNode::canAdd(Node::Type) const
+bool ConceptNode::canAdd(Node::Type type) const
 {
-    return false;
+    return true;
+    return Node::Logical == type || Node::Has == type;
 }
 
 void ConceptNode::setName(const std::string& name)

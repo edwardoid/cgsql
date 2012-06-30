@@ -8,7 +8,7 @@ BEGIN_CGSQL_NS
 class AndNode: public LogicalBase
 {
 public:
-    AndNode(Node* parent);
+    AndNode(Node* parent = 0);
     virtual ~AndNode();
 };
 

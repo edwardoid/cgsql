@@ -8,7 +8,7 @@ BEGIN_CGSQL_NS
 class PlayerNode: public Node
 {
 public:
-    PlayerNode(Node* parent);
+    PlayerNode(Node* parent = 0);
     virtual ~PlayerNode();
     virtual Node::Type type() const;
     virtual bool canAdd(const Node::Type type) const;

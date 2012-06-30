@@ -50,4 +50,25 @@ std::string StringUtils::trim(const std::string& str)
     return res;
 }
 
+StringList StringUtils::split(const std::string& str,
+                             const std::string& sep)
+{
+    StringList res;
+    size_t beg = 0,
+           end = 0;
+    while(beg != std::string::npos)
+    {
+        beg = str.find_first_not_of(sep, end);
+        if(beg == std::string::npos)
+            break;
+        end = str.find_first_of(sep, beg);
+        size_t strLen = end;
+        if(end != std::string::npos)
+            strLen = end - beg;
+        res.push_back(str.substr(beg, strLen));
+    }
+
+    return res;
+}
+
 END_CGSQL_NS

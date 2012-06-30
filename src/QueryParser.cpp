@@ -1,6 +1,7 @@
 #include "QueryParser.h"
 #include "StringUtils.h"
 #include "Keywords.h"
+#include "NodeFactory.h"
 #include <iostream>
 BEGIN_CGSQL_NS
 
@@ -126,10 +127,11 @@ Node* QueryParser::subParse(const std::string& q,
     /*
         Creating node and binding children
     */
+    node = NodeFactory::nodeFromString(str);
     if(node)
     {
-        node->setLeft(left);
-        node->setRight(right);
+        if(left) node->setLeft(left);
+        if(right) node->setRight(right);
     }
     return node;
 }

@@ -36,7 +36,7 @@
 #define SYNTAX_ERROR(STR, MSG) {\
         std::cerr << "Syntax error: " << MSG\
                   << " in: " << std::endl \
-                  << STR << std::endl; \
+                  << "\"" << STR << "\"" << std::endl; \
     }
 
 #endif // DEBUG_H

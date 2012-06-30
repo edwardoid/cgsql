@@ -14,6 +14,7 @@ public:
         Player,
         Color,
         Result,
+        Has,
         Logical,
         Concept
     } Type;

@@ -10,7 +10,7 @@ BEGIN_CGSQL_NS
 #define LOSES             "LOSES"
 #define HAS               "HAS"
 #define HASNT             "HASNT"
-#define CONCEPT_DELIMETER '.'
+#define CONCEPT_DELIMETER "."
 #define HEADER_BEGIN      '['
 #define HEADER_END        ']'
 #define BEGIN             '('
