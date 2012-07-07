@@ -12,4 +12,9 @@ OrNode::~OrNode()
 {
 }
 
+std::string OrNode::toString() const
+{
+    return "OR";
+}
+
 END_CGSQL_NS

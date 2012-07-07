@@ -12,4 +12,9 @@ XorNode::~XorNode()
 {
 }
 
+std::string XorNode::toString() const
+{
+    return "XOR";
+}
+
 END_CGSQL_NS

@@ -50,4 +50,32 @@ Node::~Node()
         delete m_right;
 }
 
+std::string Node::toString( const Node::HasAbility ability)
+{
+    return (ability == Yes ? "HAS" : "HASNT");
+}
+
+std::string Node::toString(const Node::NodeColor color)
+{
+    switch(color)
+    {
+        case Whites: return "WHITES";
+        case Blacks: return "BLACKS";
+    }
+    ASSERT(false);
+    return "Unknown";
+}
+
+std::string Node::toString(const Node::GameResult result)
+{
+    switch(result)
+    {
+        case WhitesWins: return "WHITES WINS";
+        case BlacksWins: return "WHITES LOSES";
+        case Tie:        return "TIE";
+    }
+    ASSERT(false);
+    return "Unknown";
+}
+
 END_CGSQL_NS

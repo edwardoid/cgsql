@@ -50,11 +50,12 @@ Node* NodeFactory::nodeFromString(const std::string& str)
             StringList cl = StringUtils::split(*i, CONCEPT_DELIMETER);
             ConceptNode* c = new ConceptNode();
             c->setName(*(cl.begin()));
-            c->setRequieredValue(*cl.rend());
+            c->setRequieredValue(*cl.rbegin());
             if(leftChild)
                 rightChild = c;
             else
                 leftChild = c;
+
         }
         else if(strIsLogic(*i))
         {
@@ -81,6 +82,7 @@ Node* NodeFactory::nodeFromString(const std::string& str)
                 ASSERT(false);
                 return NULL;
             }
+            node->setName(*l.rbegin());
             return node;
         }
 

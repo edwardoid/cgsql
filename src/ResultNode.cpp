@@ -28,4 +28,9 @@ Node::GameResult ResultNode::result() const
     return m_result;
 }
 
+std::string ResultNode::toString() const
+{
+    return Node::toString(m_result);
+}
+
 END_CGSQL_NS

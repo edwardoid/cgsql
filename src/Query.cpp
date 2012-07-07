@@ -8,16 +8,21 @@
 BEGIN_CGSQL_NS
 
 Query::Query()
+    : m_queryStr()
+    , m_ast(0)
 {
 }
 
 Query::Query(const std::string& str)
     : m_queryStr(str)
+    , m_ast(0)
 {
 }
 
 Query::~Query()
 {
+    if(m_ast)
+        delete m_ast;
 }
 
 std::string Query::toString() const
@@ -32,10 +37,12 @@ void Query::clear()
 
 bool Query::parse(const std::string& queryStr)
 {
-    m_queryStr = queryStr;
+    if(queryStr.size() > 2)
+       m_queryStr = queryStr;
     if(m_ast)
         delete m_ast;
-    m_ast = QueryParser::parse(m_queryStr, new RootNode());
+    m_ast = new AST();
+    m_ast = QueryParser::parse(m_queryStr, m_ast);
     return m_ast != 0;
 }
 
@@ -66,5 +73,9 @@ std::ostream& operator << (std::ostream& os, const Query& q)
     return os << q.m_queryStr;
 }
 
+AST* Query::ast() const
+{
+    return m_ast;
+}
 
 END_CGSQL_NS

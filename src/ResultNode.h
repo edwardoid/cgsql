@@ -31,6 +31,8 @@ public:
     virtual bool canAdd(const Type type) const;
     void setResult(GameResult result);
     GameResult result() const;
+protected:
+    virtual std::string toString() const;
 private:
     GameResult m_result;
 };

@@ -39,6 +39,8 @@ public:
     std::string requieredValue() const;
     virtual void setLeft(Node*);
     virtual void setRight(Node*);
+protected:
+    virtual std::string toString() const;
 private:
     std::string m_requieredValue;
     std::string m_name;

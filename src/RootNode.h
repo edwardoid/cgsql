@@ -38,6 +38,7 @@ public:
     void setBody(Body* body); 
     Header* header() const;
     Body* body() const;
+    virtual std::string toString() const;
 };
 
 END_CGSQL_NS

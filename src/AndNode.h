@@ -28,6 +28,8 @@ class AndNode: public LogicalBase
 public:
     AndNode(Node* parent = 0);
     virtual ~AndNode();
+protected:
+    std::string toString() const;
 };
 
 END_CGSQL_NS

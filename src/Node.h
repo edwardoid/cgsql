@@ -21,6 +21,7 @@
 
 #include "CGSQL.h"
 #include <list>
+#include <ostream>
 
 BEGIN_CGSQL_NS
 
@@ -50,6 +51,13 @@ public:
         BlacksWins,
         Tie
     } GameResult;
+
+    typedef enum
+    {
+        Yes = 0,
+        No
+    } HasAbility;
+
 public:
     Node(Node* parent = 0);
     virtual void setParent(Node* parent);
@@ -61,6 +69,11 @@ public:
     virtual Node* right() const;
     virtual bool canAdd(const Type type) const = 0;
     virtual ~Node();
+    virtual std::string toString() const = 0;
+    static std::string toString(const HasAbility ability);
+    static std::string toString(const NodeColor color);
+    static std::string toString(const GameResult result);
+
 private:
     Node* m_parent;
     Node* m_left;

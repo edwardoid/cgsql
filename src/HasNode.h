@@ -31,8 +31,12 @@ public:
     virtual bool canAdd(const Type type) const;
     void setColor(NodeColor color);
     NodeColor color() const;
+
+protected:
+    virtual std::string toString() const;
 private:
     NodeColor m_color;
+    HasAbility m_ability;
 };
 
 END_CGSQL_NS

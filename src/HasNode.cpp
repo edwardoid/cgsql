@@ -5,6 +5,7 @@ BEGIN_CGSQL_NS
 HasNode::HasNode(Node* parent)
     : Node(parent)
     , m_color(Node::Whites)
+    , m_ability(Node::Yes)
 {
 }
 
@@ -28,4 +29,10 @@ Node::NodeColor HasNode::color() const
 {
     return m_color;
 }
+
+std::string HasNode::toString() const
+{
+    return Node::toString(m_color) + std::string(" ") + Node::toString(m_ability);
+}
+
 END_CGSQL_NS

@@ -28,6 +28,8 @@ class XorNode: public LogicalBase
 public:
     XorNode(Node* parent = 0);
     virtual ~XorNode();
+protected:
+    virtual std::string toString() const;
 };
 
 END_CGSQL_NS

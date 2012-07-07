@@ -41,4 +41,9 @@ RootNode::~RootNode()
 {
 }
 
+std::string RootNode::toString() const
+{
+    return "QUERY";
+}
+
 END_CGSQL_NS

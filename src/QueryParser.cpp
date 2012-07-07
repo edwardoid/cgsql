@@ -60,7 +60,7 @@ AST* QueryParser::parse(const std::string& str,
     }
     else
         b = subParse(body, 1);
-
+    ASSERT(b != 0);  
     
     if(h != NULL)
     {
@@ -133,6 +133,7 @@ Node* QueryParser::subParse(const std::string& q,
         if(left) node->setLeft(left);
         if(right) node->setRight(right);
     }
+    else node = left;
     return node;
 }
 

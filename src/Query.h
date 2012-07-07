@@ -39,6 +39,9 @@ public:
     friend std::ostream& operator << (std::ostream& os, const Query& q);
     ~Query();
 protected:
+    AST* ast() const;
+
+    friend class QueryPrinter;
 private:
     std::string m_queryStr;
     AST* m_ast;

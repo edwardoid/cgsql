@@ -12,4 +12,9 @@ AndNode::~AndNode()
 {
 }
 
+std::string AndNode::toString() const
+{
+    return "AND";
+}
+
 END_CGSQL_NS

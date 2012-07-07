@@ -34,6 +34,8 @@ public:
     std::string name() const;
     void setColor(Node::NodeColor color);
     Node::NodeColor color() const;
+protected:
+    virtual std::string toString() const;
 private:
     std::string m_name;
     Node::NodeColor m_color;

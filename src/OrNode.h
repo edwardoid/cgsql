@@ -28,6 +28,8 @@ class OrNode: public LogicalBase
 public:
     OrNode(Node* parent = 0);
     virtual ~OrNode();
+protected:
+    virtual std::string toString() const;
 };
 
 END_CGSQL_NS

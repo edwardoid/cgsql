@@ -34,8 +34,11 @@ class QueryPrinter
 public:
     QueryPrinter(const Query& q);
     QueryPrinter(const AST* ast);
-    friend std::ostream operator << (std::ostream&,
+    friend std::ostream& operator << (std::ostream&,
                                      const QueryPrinter& p);
+private:
+    std::ostream& printNode(std::ostream&,
+                            const Node* node) const;
 private:
     const AST* m_ast;
 };

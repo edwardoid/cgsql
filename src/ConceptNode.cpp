@@ -32,7 +32,7 @@ std::string ConceptNode::name() const
 
 void ConceptNode::setRequieredValue(const std::string& requieredValue)
 {
-    m_requieredValue;
+    m_requieredValue = requieredValue;
 }
 
 std::string ConceptNode::requieredValue() const
@@ -52,6 +52,11 @@ void ConceptNode::setRight(Node*)
 
 ConceptNode::~ConceptNode()
 {
+}
+
+std::string ConceptNode::toString() const
+{
+    return m_name + std::string(".") + m_requieredValue;
 }
 
 END_CGSQL_NS
