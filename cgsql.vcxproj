@@ -1,0 +1,108 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{9CB4BB8A-4463-4130-8A68-9D6CA20F2AA4}</ProjectGuid>
+    <RootNamespace>cgsql</RootNamespace>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <OutDir>$(SolutionDir)\bin\$(Configuration)\</OutDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <IntDir>$(SolutionDir)\$(Configuration)\$(ProjectName)</IntDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="src\AndNode.cpp" />
+    <ClCompile Include="src\ConceptNode.cpp" />
+    <ClCompile Include="src\HasNode.cpp" />
+    <ClCompile Include="src\LogicalBase.cpp" />
+    <ClCompile Include="src\Node.cpp" />
+    <ClCompile Include="src\NodeFactory.cpp" />
+    <ClCompile Include="src\OrNode.cpp" />
+    <ClCompile Include="src\PlayerNode.cpp" />
+    <ClCompile Include="src\Query.cpp" />
+    <ClCompile Include="src\QueryParser.cpp" />
+    <ClCompile Include="src\QueryPrinter.cpp" />
+    <ClCompile Include="src\ResultNode.cpp" />
+    <ClCompile Include="src\RootNode.cpp" />
+    <ClCompile Include="src\StringUtils.cpp" />
+    <ClCompile Include="src\XorNode.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\AndNode.h" />
+    <ClInclude Include="src\CGSQL.h" />
+    <ClInclude Include="src\ConceptNode.h" />
+    <ClInclude Include="src\Debug.h" />
+    <ClInclude Include="src\HasNode.h" />
+    <ClInclude Include="src\Keywords.h" />
+    <ClInclude Include="src\LogicalBase.h" />
+    <ClInclude Include="src\Node.h" />
+    <ClInclude Include="src\NodeFactory.h" />
+    <ClInclude Include="src\OrNode.h" />
+    <ClInclude Include="src\PlayerNode.h" />
+    <ClInclude Include="src\Query.h" />
+    <ClInclude Include="src\QueryFile.h" />
+    <ClInclude Include="src\QueryParser.h" />
+    <ClInclude Include="src\QueryPrinter.h" />
+    <ClInclude Include="src\ResultNode.h" />
+    <ClInclude Include="src\RootNode.h" />
+    <ClInclude Include="src\StringUtils.h" />
+    <ClInclude Include="src\XorNode.h" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

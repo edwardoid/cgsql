@@ -21,7 +21,7 @@
 
 #include <string>
 #include <istream>
-#include <CGSQL.h>
+#include "CGSQL.h"
 
 BEGIN_CGSQL_NS
 

@@ -1,0 +1,97 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="src\AndNode.cpp">
+      <Filter>Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="src\LogicalBase.cpp">
+      <Filter>Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Query.cpp">
+      <Filter>Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="src\RootNode.cpp">
+      <Filter>Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="src\XorNode.cpp">
+      <Filter>Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="src\OrNode.cpp">
+      <Filter>Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Node.cpp">
+      <Filter>Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="src\PlayerNode.cpp" />
+    <ClCompile Include="src\QueryParser.cpp" />
+    <ClCompile Include="src\QueryPrinter.cpp" />
+    <ClCompile Include="src\ResultNode.cpp" />
+    <ClCompile Include="src\StringUtils.cpp" />
+    <ClCompile Include="src\ConceptNode.cpp">
+      <Filter>Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="src\HasNode.cpp">
+      <Filter>Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="src\NodeFactory.cpp">
+      <Filter>Sources</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\Debug.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="src\CGSQL.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Keywords.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="src\LogicalBase.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Node.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="src\OrNode.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Query.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="src\QueryFile.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="src\RootNode.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="src\XorNode.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="src\AndNode.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="src\NodeFactory.h" />
+    <ClInclude Include="src\PlayerNode.h" />
+    <ClInclude Include="src\QueryParser.h" />
+    <ClInclude Include="src\QueryPrinter.h" />
+    <ClInclude Include="src\ResultNode.h" />
+    <ClInclude Include="src\StringUtils.h" />
+    <ClInclude Include="src\HasNode.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ConceptNode.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Headers">
+      <UniqueIdentifier>{c4c73552-e266-4eab-bed0-ab420ccd7c76}</UniqueIdentifier>
+      <Extensions>*.h</Extensions>
+    </Filter>
+    <Filter Include="Sources">
+      <UniqueIdentifier>{541365b0-4d55-4b87-8834-e52a594cf61c}</UniqueIdentifier>
+      <Extensions>*.cpp</Extensions>
+    </Filter>
+  </ItemGroup>
+</Project>
