@@ -32,7 +32,7 @@ Node::NodeColor HasNode::color() const
 
 std::string HasNode::toString() const
 {
-    return Node::toString(m_color) + std::string(" ") + Node::toString(m_ability);
+    return Node::toString(m_color) += std::string(" ") += Node::toString(m_ability);
 }
 
 END_CGSQL_NS

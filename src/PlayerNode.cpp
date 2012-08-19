@@ -46,7 +46,7 @@ Node::NodeColor PlayerNode::color() const
 
 std::string PlayerNode::toString() const
 {
-    return Node::toString(m_color) + m_name;
+    return Node::toString(m_color) += m_name;
 }
 
 END_CGSQL_NS
