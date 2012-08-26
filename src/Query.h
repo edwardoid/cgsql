@@ -27,7 +27,7 @@ BEGIN_CGSQL_NS
 
 typedef class RootNode AST;
 
-class Query
+class CGSQL_EXPORT Query
 {
 public:
     Query();
