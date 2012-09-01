@@ -36,8 +36,14 @@ class StringUtils
                             size_t& end,
                             const char delimeter1,
                             const char delimeter2);
-        static
-        std::string trim(const std::string& str);
+		static
+		std::string& ltrim(std::string &s);
+
+		static
+		std::string& rtrim(std::string &s);
+        
+		static
+        std::string& trim(std::string& s);
         
         static
         StringList split(const std::string& str,

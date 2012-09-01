@@ -28,6 +28,7 @@ class XorNode: public LogicalBase
 public:
     XorNode(Node* parent = 0);
     virtual ~XorNode();
+	virtual bool accept(const pgn::Game* game) const;
 protected:
     virtual std::string toString() const;
 };

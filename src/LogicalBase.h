@@ -29,7 +29,7 @@ public:
     LogicalBase(Node* parent);
     virtual ~LogicalBase();
     virtual Node::Type type() const;
-    virtual bool canAdd(Node::Type type) const;
+    virtual bool canAdd(const Node::Type type) const;
 };
 
 END_CGSQL_NS

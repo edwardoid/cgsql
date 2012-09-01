@@ -27,7 +27,7 @@ BEGIN_CGSQL_NS
 typedef Node Header;
 typedef Node Body;
 
-class RootNode: public Node
+class CGSQL_EXPORT RootNode: public Node
 {
 public:
     RootNode();

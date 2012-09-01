@@ -13,8 +13,9 @@
 
 BEGIN_CGSQL_NS
 
-Node* NodeFactory::nodeFromString(const std::string& str)
+Node* NodeFactory::nodeFromString(std::string& str)
 {
+	StringUtils::trim(str);
     StringList l = StringUtils::split(str, " ");
     Node::Type possibleNodeType = Node::Root;
     Node *leftChild = 0,
@@ -82,7 +83,8 @@ Node* NodeFactory::nodeFromString(const std::string& str)
                 ASSERT(false);
                 return NULL;
             }
-            node->setName(*l.rbegin());
+			std::string& playerNameStr = *l.rbegin();
+            node->setName(playerNameStr.substr(1, playerNameStr.size() - 2));
             return node;
         }
 

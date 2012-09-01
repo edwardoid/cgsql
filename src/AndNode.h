@@ -28,6 +28,7 @@ class AndNode: public LogicalBase
 public:
     AndNode(Node* parent = 0);
     virtual ~AndNode();
+	virtual bool accept(const pgn::Game* game) const;
 protected:
     std::string toString() const;
 };

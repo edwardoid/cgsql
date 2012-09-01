@@ -18,9 +18,20 @@ QueryParser::~QueryParser()
 {
 }
 
-AST* QueryParser::parse(const std::string& str,
-                           AST* ast,
-                           const int level)
+void QueryParser::removeComments(std::string& str)
+{
+	size_t commentBegin = str.find_first_of(COMMENT);
+	while(commentBegin != std::string::npos)
+	{
+		size_t commentEnd = str.find_first_of('\n', commentBegin);
+		str.erase(commentBegin, commentEnd - commentBegin);
+		commentBegin = str.find_first_of(COMMENT);
+	}
+}
+
+AST* QueryParser::parse(std::string str,
+                        AST* ast,
+                        const int level)
 {
     if(NULL == ast)
         ast = new AST();
@@ -34,6 +45,8 @@ AST* QueryParser::parse(const std::string& str,
     size_t beg = std::string::npos,
            end = std::string::npos;
 
+	removeComments(str);
+	str = StringUtils::trim(str);
     std::string header,
                 body;
     
@@ -42,7 +55,7 @@ AST* QueryParser::parse(const std::string& str,
                                   end,
                                   HEADER_BEGIN,
                                   HEADER_END);
-    if(header.size() < 2)
+    if(header.size() < 2 || beg != 0)
     {
         SYNTAX_ERROR("No header in query", header);
         return NULL;

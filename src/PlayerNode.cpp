@@ -49,4 +49,10 @@ std::string PlayerNode::toString() const
     return Node::toString(m_color) += m_name;
 }
 
+bool PlayerNode::accept( const pgn::Game* game ) const
+{
+	if(m_color == Whites) return game->white() == m_name;
+	return game->black() == m_name;
+}
+
 END_CGSQL_NS

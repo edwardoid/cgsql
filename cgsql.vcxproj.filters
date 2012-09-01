@@ -22,11 +22,6 @@
     <ClCompile Include="src\Node.cpp">
       <Filter>Sources</Filter>
     </ClCompile>
-    <ClCompile Include="src\PlayerNode.cpp" />
-    <ClCompile Include="src\QueryParser.cpp" />
-    <ClCompile Include="src\QueryPrinter.cpp" />
-    <ClCompile Include="src\ResultNode.cpp" />
-    <ClCompile Include="src\StringUtils.cpp" />
     <ClCompile Include="src\ConceptNode.cpp">
       <Filter>Sources</Filter>
     </ClCompile>
@@ -34,6 +29,21 @@
       <Filter>Sources</Filter>
     </ClCompile>
     <ClCompile Include="src\NodeFactory.cpp">
+      <Filter>Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="src\PlayerNode.cpp">
+      <Filter>Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="src\QueryParser.cpp">
+      <Filter>Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="src\QueryPrinter.cpp">
+      <Filter>Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ResultNode.cpp">
+      <Filter>Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="src\StringUtils.cpp">
       <Filter>Sources</Filter>
     </ClCompile>
   </ItemGroup>
@@ -71,16 +81,28 @@
     <ClInclude Include="src\AndNode.h">
       <Filter>Headers</Filter>
     </ClInclude>
-    <ClInclude Include="src\NodeFactory.h" />
-    <ClInclude Include="src\PlayerNode.h" />
-    <ClInclude Include="src\QueryParser.h" />
-    <ClInclude Include="src\QueryPrinter.h" />
-    <ClInclude Include="src\ResultNode.h" />
-    <ClInclude Include="src\StringUtils.h" />
     <ClInclude Include="src\HasNode.h">
       <Filter>Headers</Filter>
     </ClInclude>
     <ClInclude Include="src\ConceptNode.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="src\NodeFactory.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="src\StringUtils.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="src\PlayerNode.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="src\QueryParser.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="src\QueryPrinter.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ResultNode.h">
       <Filter>Headers</Filter>
     </ClInclude>
   </ItemGroup>

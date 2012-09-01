@@ -20,12 +20,13 @@
 #define NODE_H
 
 #include "CGSQL.h"
+#include <PGNGame.h>
 #include <list>
 #include <ostream>
 
 BEGIN_CGSQL_NS
 
-class Node
+class CGSQL_EXPORT Node
 {
 public:
     typedef enum
@@ -70,10 +71,11 @@ public:
     virtual bool canAdd(const Type type) const = 0;
     virtual ~Node();
     virtual std::string toString() const = 0;
+	virtual bool accept(const pgn::Game* game) const;
     static std::string toString(const HasAbility ability);
     static std::string toString(const NodeColor color);
     static std::string toString(const GameResult result);
-
+	std::list<Node*> childListByType(Type type, std::list<Node*>& list = std::list<Node*>());
 private:
     Node* m_parent;
     Node* m_left;

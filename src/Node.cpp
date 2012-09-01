@@ -78,4 +78,22 @@ std::string Node::toString(const Node::GameResult result)
     return "Unknown";
 }
 
+std::list<Node*> Node::childListByType( Type type, std::list<Node*>& list /*= std::list<Node*>()*/ )
+{
+	if (this->type() == type) list.push_back(this);
+	if (m_right) m_right->childListByType(type, list);
+	if (m_left) m_left->childListByType(type, list);
+	
+	return list;
+}
+
+bool Node::accept(const pgn::Game* game) const
+{
+	bool res = true;
+	if (m_left) res = m_left->accept(game);
+	if (m_right) res = res && m_right->accept(game);
+	return res;
+}
+
+
 END_CGSQL_NS

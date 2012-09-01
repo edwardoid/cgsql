@@ -30,7 +30,7 @@ class NodeFactory
 {
 public:
     static
-    Node* nodeFromString(const std::string& str);
+    Node* nodeFromString(std::string& str);
 
 private:
     static

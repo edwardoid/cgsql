@@ -27,14 +27,14 @@ BEGIN_CGSQL_NS
 
 typedef RootNode AST;
 
-class QueryParser
+class CGSQL_EXPORT QueryParser
 {
 public:
     QueryParser(const std::string& str = std::string(),
                 AST* root = new AST());
     ~QueryParser();
     static
-    AST* parse(const std::string& str,
+    AST* parse(std::string str,
                AST* root = new AST(),
                const int level = 0);
     AST* ast() const;
@@ -42,6 +42,8 @@ private:
     static
     Node* subParse(const std::string& str,
                    const int level);
+	static
+	void removeComments(std::string& str);
 
     #ifdef DEBUG_PARSING_LEVELS
     static

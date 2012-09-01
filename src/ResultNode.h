@@ -21,6 +21,11 @@
 
 #include "Node.h"
 
+namespace pgn
+{
+	class Game;
+}
+
 BEGIN_CGSQL_NS
 
 class ResultNode: public Node
@@ -31,6 +36,7 @@ public:
     virtual bool canAdd(const Type type) const;
     void setResult(GameResult result);
     GameResult result() const;
+	bool accept(const pgn::Game* game) const;
 protected:
     virtual std::string toString() const;
 private:
