@@ -28,7 +28,7 @@ class OrNode: public LogicalBase
 public:
     OrNode(Node* parent = 0);
     virtual ~OrNode();
-	virtual bool accept(const pgn::Game* game) const;
+	virtual bool accept(AbstractCalculationData* data) const;
 protected:
     virtual std::string toString() const;
 };

@@ -122,6 +122,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="src\AndNode.cpp" />
+    <ClCompile Include="src\AbsrtractCalculationData.cpp" />
     <ClCompile Include="src\ConceptNode.cpp" />
     <ClCompile Include="src\HasNode.cpp" />
     <ClCompile Include="src\LogicalBase.cpp" />
@@ -139,6 +140,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\AndNode.h" />
+    <ClInclude Include="src\AbstractCalculationData.h" />
     <ClInclude Include="src\CGSQL.h" />
     <ClInclude Include="src\ConceptNode.h" />
     <ClInclude Include="src\Debug.h" />

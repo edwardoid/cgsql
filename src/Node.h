@@ -20,7 +20,7 @@
 #define NODE_H
 
 #include "CGSQL.h"
-#include <PGNGame.h>
+#include "AbstractCalculationData.h"
 #include <list>
 #include <ostream>
 
@@ -71,7 +71,7 @@ public:
     virtual bool canAdd(const Type type) const = 0;
     virtual ~Node();
     virtual std::string toString() const = 0;
-	virtual bool accept(const pgn::Game* game) const;
+	virtual bool accept(AbstractCalculationData* data) const;
     static std::string toString(const HasAbility ability);
     static std::string toString(const NodeColor color);
     static std::string toString(const GameResult result);

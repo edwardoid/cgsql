@@ -1,5 +1,5 @@
 #include "PlayerNode.h"
-
+#include <PGNGame.h>
 
 BEGIN_CGSQL_NS
 
@@ -49,10 +49,10 @@ std::string PlayerNode::toString() const
     return Node::toString(m_color) += m_name;
 }
 
-bool PlayerNode::accept( const pgn::Game* game ) const
+bool PlayerNode::accept(AbstractCalculationData* data) const
 {
-	if(m_color == Whites) return game->white() == m_name;
-	return game->black() == m_name;
+	if(m_color == Whites) return data->game()->white() == m_name;
+	return data->game()->black() == m_name;
 }
 
 END_CGSQL_NS

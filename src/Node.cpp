@@ -87,11 +87,11 @@ std::list<Node*> Node::childListByType( Type type, std::list<Node*>& list /*= st
 	return list;
 }
 
-bool Node::accept(const pgn::Game* game) const
+bool Node::accept(AbstractCalculationData* data) const
 {
 	bool res = true;
-	if (m_left) res = m_left->accept(game);
-	if (m_right) res = res && m_right->accept(game);
+	if (m_left) res = m_left->accept(data);
+	if (m_right) res = res && m_right->accept(data);
 	return res;
 }
 

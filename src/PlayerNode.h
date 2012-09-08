@@ -30,7 +30,7 @@ public:
     virtual ~PlayerNode();
     virtual Node::Type type() const;
     virtual bool canAdd(const Node::Type type) const;
-	virtual bool accept(const pgn::Game* game) const;
+	virtual bool accept(AbstractCalculationData* data) const;
     void setName(const std::string& name);
     std::string name() const;
     void setColor(Node::NodeColor color);

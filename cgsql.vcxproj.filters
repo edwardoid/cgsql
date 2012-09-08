@@ -46,6 +46,9 @@
     <ClCompile Include="src\StringUtils.cpp">
       <Filter>Sources</Filter>
     </ClCompile>
+    <ClCompile Include="src\AbsrtractCalculationData.cpp">
+      <Filter>Sources</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Debug.h">
@@ -103,6 +106,9 @@
       <Filter>Headers</Filter>
     </ClInclude>
     <ClInclude Include="src\ResultNode.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="src\AbstractCalculationData.h">
       <Filter>Headers</Filter>
     </ClInclude>
   </ItemGroup>

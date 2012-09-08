@@ -29,12 +29,12 @@ void RootNode::setBody(Body* body)
 
 Header* RootNode::header() const
 {
-    return right();
+    return left();
 } 
 
 Body* RootNode::body() const
 {
-    return left();
+    return right();
 }
 
 RootNode::~RootNode()

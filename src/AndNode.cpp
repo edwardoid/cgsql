@@ -18,9 +18,9 @@ std::string AndNode::toString() const
 }
 
 
-bool AndNode::accept( const pgn::Game* game ) const
+bool AndNode::accept(AbstractCalculationData* data) const
 {
-	return (left() ? left()->accept(game) : true) && (right() ? right()->accept(game) : true );
+	return (left() ? left()->accept(data) : true) && (right() ? right()->accept(data) : true );
 }
 
 END_CGSQL_NS

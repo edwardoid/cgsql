@@ -17,9 +17,9 @@ std::string OrNode::toString() const
     return "OR";
 }
 
-bool OrNode::accept( const pgn::Game* game ) const
+bool OrNode::accept(AbstractCalculationData* data) const
 {
-	return (left() ? left()->accept(game) : true) || (right() ? right()->accept(game) : true );
+	return (left() ? left()->accept(data) : true) || (right() ? right()->accept(data) : true );
 }
 
 

@@ -39,6 +39,7 @@ public:
     std::string requieredValue() const;
     virtual void setLeft(Node*);
     virtual void setRight(Node*);
+	virtual bool accept(AbstractCalculationData* data) const;
 protected:
     virtual std::string toString() const;
 private:

@@ -17,9 +17,9 @@ std::string XorNode::toString() const
     return "XOR";
 }
 
-bool XorNode::accept( const pgn::Game* game ) const
+bool XorNode::accept(AbstractCalculationData* data) const
 {
-	return (left() ? left()->accept(game) : true) ^ (right() ? right()->accept(game) : true );
+	return (left() ? left()->accept(data) : true) ^ (right() ? right()->accept(data) : true );
 }
 
 END_CGSQL_NS

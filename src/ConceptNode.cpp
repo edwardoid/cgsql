@@ -59,4 +59,10 @@ std::string ConceptNode::toString() const
     return m_name + std::string(".") + m_requieredValue;
 }
 
+bool ConceptNode::accept(AbstractCalculationData* data) const
+{
+	return data->calculate(m_name.c_str(), m_requieredValue.c_str());
+}
+
+
 END_CGSQL_NS
