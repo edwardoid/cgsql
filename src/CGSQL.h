@@ -28,7 +28,7 @@
 #define DEBUG_PARSING_LEVELS
 #define DEBUG_COMMENTS
 
-#ifdef _MSC_VER
+#ifdef LIB_CGSQL_EXPORT
 #define CGSQL_EXPORT __declspec(dllexport)
 #else
 #define CGSQL_EXPORT
@@ -36,5 +36,6 @@
 
 #include "Debug.h"
 
+#include "Keywords.h"
 
 #endif // CGSQL_H
