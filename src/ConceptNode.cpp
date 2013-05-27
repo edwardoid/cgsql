@@ -1,4 +1,5 @@
 #include "ConceptNode.h"
+#include "HasNode.h"
 
 BEGIN_CGSQL_NS
 
@@ -61,7 +62,42 @@ std::string ConceptNode::toString() const
 
 bool ConceptNode::accept(AbstractCalculationData* data) const
 {
-	return data->calculate(m_name.c_str(), m_requieredValue.c_str());
+	bool ok = false;
+	CE::piece_color c = color(&ok);
+	if(!ok)
+		return false;
+	return data->calculate(m_name.c_str(), m_requieredValue.c_str(), c);
+}
+
+CE::piece_color ConceptNode::color(bool* ok) const
+{
+	const Node* p = parent();
+	while(p != NULL & p->type() != Node::Has)
+	{
+		p = p->parent();
+	}
+
+	if(ok != NULL)
+	{
+		*ok = false;
+	}
+
+	if(p == NULL)
+	{
+		return -1;
+	}
+
+	const HasNode* has = dynamic_cast<const HasNode*>(p);
+	if (NULL != has)
+	{
+		if(ok != NULL)
+		{
+			*ok = true;
+		}
+
+		return has->color() == Node::Whites ? CE::white : CE::black;
+	}
+	return - 1;
 }
 
 

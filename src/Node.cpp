@@ -25,11 +25,15 @@ Node* Node::parent() const
 void Node::setLeft(Node* left)
 {
     m_left = left;
+	if(m_left != NULL)
+		m_left->setParent(this);
 }
 
 void Node::setRight(Node* right)
 {
     m_right = right;
+	if(m_right != NULL)
+		m_right->setParent(this);
 }
 
 Node* Node::left() const

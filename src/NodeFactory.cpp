@@ -56,6 +56,7 @@ Node* NodeFactory::nodeFromString(std::string& str)
                 rightChild = c;
             else
                 leftChild = c;
+			return c;
 
         }
         else if(strIsLogic(*i))

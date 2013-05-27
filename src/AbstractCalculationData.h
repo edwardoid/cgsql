@@ -20,6 +20,7 @@
 #define ABSTRACTCALCULATIONDATA_H
 
 #include "CGSQL.h"
+#include <CEPiece.h>
 
 namespace pgn
 {
@@ -34,7 +35,7 @@ BEGIN_CGSQL_NS
 	{
 	public:
 		AbstractCalculationData(const pgn::Game* game);
-		virtual bool calculate(const char* concept, const char* requieredValue) const = 0;
+		virtual bool calculate(const char* concept, const char* requieredValue, CE::piece_color color) const = 0;
 		inline const pgn::Game* game() const { return m_game; }
 	protected:
 		const pgn::Game* m_game;

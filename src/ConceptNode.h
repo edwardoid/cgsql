@@ -42,6 +42,7 @@ public:
 	virtual bool accept(AbstractCalculationData* data) const;
 protected:
     virtual std::string toString() const;
+	CE::piece_color color(bool* ok) const;
 private:
     std::string m_requieredValue;
     std::string m_name;
